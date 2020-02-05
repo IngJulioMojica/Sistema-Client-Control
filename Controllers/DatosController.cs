@@ -112,8 +112,7 @@ namespace Client_Control_001.Controllers
 
         public ActionResult Actualizadatos(int codigo)
         {
-            codigo = 1030522;
-
+        
             var modelo4 = from m in entidad.Compras
                           where m.Cod_empresa == codigo
                           select m;
