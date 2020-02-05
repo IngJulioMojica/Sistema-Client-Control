@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Data_Client_ControlModelStoreContainer" CdmEntityContainer="Data_Client_ControlEntities">
+    <EntitySetMapping Name="Actividades">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Actividades">
+        <MappingFragment StoreEntitySet="Actividades">
+          <ScalarProperty Name="Cod_actividad" ColumnName="Cod_actividad" />
+          <ScalarProperty Name="Tipo_actividad" ColumnName="Tipo_actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudades">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Ciudades">
+        <MappingFragment StoreEntitySet="Ciudades">
+          <ScalarProperty Name="Cod_ciudad" ColumnName="Cod_ciudad" />
+          <ScalarProperty Name="Nombre_ciudad" ColumnName="Nombre_ciudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Cod_cli" ColumnName="Cod_cli" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Cod_ciudad" ColumnName="Cod_ciudad" />
+          <ScalarProperty Name="Cod_pais" ColumnName="Cod_pais" />
+          <ScalarProperty Name="Cod_compra" ColumnName="Cod_compra" />
+          <ScalarProperty Name="Cod_estado" ColumnName="Cod_estado" />
+          <ScalarProperty Name="Id_cli" ColumnName="Id_cli" />
+          <ScalarProperty Name="Red_Social" ColumnName="Red_Social" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compras">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Compras">
+        <MappingFragment StoreEntitySet="Compras">
+          <ScalarProperty Name="Cod_compra" ColumnName="Cod_compra" />
+          <ScalarProperty Name="Cod_cli" ColumnName="Cod_cli" />
+          <ScalarProperty Name="Cod_empresa" ColumnName="Cod_empresa" />
+          <ScalarProperty Name="Fecha_compra" ColumnName="Fecha_compra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresa_detalle">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Empresa_detalle">
+        <MappingFragment StoreEntitySet="Empresa_detalle">
+          <ScalarProperty Name="Cod_empresa" ColumnName="Cod_empresa" />
+          <ScalarProperty Name="Nombre_empresa" ColumnName="Nombre_empresa" />
+          <ScalarProperty Name="Direccion_empresa" ColumnName="Direccion_empresa" />
+          <ScalarProperty Name="Telefono_empresa" ColumnName="Telefono_empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Empresas">
+        <MappingFragment StoreEntitySet="Empresas">
+          <ScalarProperty Name="Cod_empresa" ColumnName="Cod_empresa" />
+          <ScalarProperty Name="Cod_actividad" ColumnName="Cod_actividad" />
+          <ScalarProperty Name="Cod_estado" ColumnName="Cod_estado" />
+          <ScalarProperty Name="Cod_pais" ColumnName="Cod_pais" />
+          <ScalarProperty Name="Cod_ciudad" ColumnName="Cod_ciudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Estados">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="Cod_estado" ColumnName="Cod_estado" />
+          <ScalarProperty Name="Tipo_estado" ColumnName="Tipo_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paises">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Paises">
+        <MappingFragment StoreEntitySet="Paises">
+          <ScalarProperty Name="Cod_pais" ColumnName="Cod_pais" />
+          <ScalarProperty Name="Nombre_pais" ColumnName="Nombre_pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promociones">
+      <EntityTypeMapping TypeName="Data_Client_ControlModel.Promociones">
+        <MappingFragment StoreEntitySet="Promociones">
+          <ScalarProperty Name="Cod_promocion" ColumnName="Cod_promocion" />
+          <ScalarProperty Name="fecha_ini_promo" ColumnName="fecha_ini_promo" />
+          <ScalarProperty Name="fecha_fin_promo" ColumnName="fecha_fin_promo" />
+          <ScalarProperty Name="Cod_ciudad" ColumnName="Cod_ciudad" />
+          <ScalarProperty Name="Cod_pais" ColumnName="Cod_pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

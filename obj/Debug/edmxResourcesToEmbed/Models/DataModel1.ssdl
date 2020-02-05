@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Data_Client_ControlModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Data_Client_ControlModelStoreContainer">
+    <EntitySet Name="Actividades" EntityType="Data_Client_ControlModel.Store.Actividades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ciudades" EntityType="Data_Client_ControlModel.Store.Ciudades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clientes" EntityType="Data_Client_ControlModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Compras" EntityType="Data_Client_ControlModel.Store.Compras" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Empresa_detalle" EntityType="Data_Client_ControlModel.Store.Empresa_detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Empresas" EntityType="Data_Client_ControlModel.Store.Empresas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Estados" EntityType="Data_Client_ControlModel.Store.Estados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Paises" EntityType="Data_Client_ControlModel.Store.Paises" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Promociones" EntityType="Data_Client_ControlModel.Store.Promociones" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Clientes__Cod_ci__182C9B23" Association="Data_Client_ControlModel.Store.FK__Clientes__Cod_ci__182C9B23">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Clientes__Cod_co__1A14E395" Association="Data_Client_ControlModel.Store.FK__Clientes__Cod_co__1A14E395">
+      <End Role="Compras" EntitySet="Compras" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Clientes__Cod_pa__1920BF5C" Association="Data_Client_ControlModel.Store.FK__Clientes__Cod_pa__1920BF5C">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Compras__Cod_emp__15502E78" Association="Data_Client_ControlModel.Store.FK__Compras__Cod_emp__15502E78">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empresas__Cod_ci__108B795B" Association="Data_Client_ControlModel.Store.FK__Empresas__Cod_ci__108B795B">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Empresas" EntitySet="Empresas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empresas__Cod_pa__0F975522" Association="Data_Client_ControlModel.Store.FK__Empresas__Cod_pa__0F975522">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Empresas" EntitySet="Empresas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Promocion__Cod_c__07F6335A" Association="Data_Client_ControlModel.Store.FK__Promocion__Cod_c__07F6335A">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Promociones" EntitySet="Promociones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Promocion__Cod_p__08EA5793" Association="Data_Client_ControlModel.Store.FK__Promocion__Cod_p__08EA5793">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Promociones" EntitySet="Promociones" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Actividades">
+    <Key>
+      <PropertyRef Name="Cod_actividad" />
+    </Key>
+    <Property Name="Cod_actividad" Type="int" Nullable="false" />
+    <Property Name="Tipo_actividad" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ciudades">
+    <Key>
+      <PropertyRef Name="Cod_ciudad" />
+    </Key>
+    <Property Name="Cod_ciudad" Type="int" Nullable="false" />
+    <Property Name="Nombre_ciudad" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="Cod_cli" />
+    </Key>
+    <Property Name="Cod_cli" Type="int" Nullable="false" />
+    <Property Name="Nombres" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="Apellidos" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="Correo" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Cod_ciudad" Type="int" Nullable="false" />
+    <Property Name="Cod_pais" Type="int" Nullable="false" />
+    <Property Name="Cod_compra" Type="int" Nullable="false" />
+    <Property Name="Cod_estado" Type="int" Nullable="false" />
+    <Property Name="Id_cli" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Red_Social" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Edad" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="Cod_compra" />
+    </Key>
+    <Property Name="Cod_compra" Type="int" Nullable="false" />
+    <Property Name="Cod_cli" Type="int" Nullable="false" />
+    <Property Name="Cod_empresa" Type="int" Nullable="false" />
+    <Property Name="Fecha_compra" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresa_detalle">
+    <Key>
+      <PropertyRef Name="Cod_empresa" />
+    </Key>
+    <Property Name="Cod_empresa" Type="int" Nullable="false" />
+    <Property Name="Nombre_empresa" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="Direccion_empresa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefono_empresa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="Cod_empresa" />
+    </Key>
+    <Property Name="Cod_empresa" Type="int" Nullable="false" />
+    <Property Name="Cod_actividad" Type="int" Nullable="false" />
+    <Property Name="Cod_estado" Type="int" Nullable="false" />
+    <Property Name="Cod_pais" Type="int" Nullable="false" />
+    <Property Name="Cod_ciudad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="Cod_estado" />
+    </Key>
+    <Property Name="Cod_estado" Type="int" Nullable="false" />
+    <Property Name="Tipo_estado" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="Cod_pais" />
+    </Key>
+    <Property Name="Cod_pais" Type="int" Nullable="false" />
+    <Property Name="Nombre_pais" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Promociones">
+    <Key>
+      <PropertyRef Name="Cod_promocion" />
+    </Key>
+    <Property Name="Cod_promocion" Type="int" Nullable="false" />
+    <Property Name="fecha_ini_promo" Type="datetime" Nullable="false" />
+    <Property Name="fecha_fin_promo" Type="datetime" Nullable="false" />
+    <Property Name="Cod_ciudad" Type="int" Nullable="false" />
+    <Property Name="Cod_pais" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Clientes__Cod_ci__182C9B23">
+    <End Role="Ciudades" Type="Data_Client_ControlModel.Store.Ciudades" Multiplicity="1" />
+    <End Role="Clientes" Type="Data_Client_ControlModel.Store.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Cod_ciudad" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="Cod_ciudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Clientes__Cod_co__1A14E395">
+    <End Role="Compras" Type="Data_Client_ControlModel.Store.Compras" Multiplicity="1" />
+    <End Role="Clientes" Type="Data_Client_ControlModel.Store.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compras">
+        <PropertyRef Name="Cod_compra" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="Cod_compra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Clientes__Cod_pa__1920BF5C">
+    <End Role="Paises" Type="Data_Client_ControlModel.Store.Paises" Multiplicity="1" />
+    <End Role="Clientes" Type="Data_Client_ControlModel.Store.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Cod_pais" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="Cod_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Compras__Cod_emp__15502E78">
+    <End Role="Empresas" Type="Data_Client_ControlModel.Store.Empresas" Multiplicity="1" />
+    <End Role="Compras" Type="Data_Client_ControlModel.Store.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="Cod_empresa" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="Cod_empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empresas__Cod_ci__108B795B">
+    <End Role="Ciudades" Type="Data_Client_ControlModel.Store.Ciudades" Multiplicity="1" />
+    <End Role="Empresas" Type="Data_Client_ControlModel.Store.Empresas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Cod_ciudad" />
+      </Principal>
+      <Dependent Role="Empresas">
+        <PropertyRef Name="Cod_ciudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empresas__Cod_pa__0F975522">
+    <End Role="Paises" Type="Data_Client_ControlModel.Store.Paises" Multiplicity="1" />
+    <End Role="Empresas" Type="Data_Client_ControlModel.Store.Empresas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Cod_pais" />
+      </Principal>
+      <Dependent Role="Empresas">
+        <PropertyRef Name="Cod_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Promocion__Cod_c__07F6335A">
+    <End Role="Ciudades" Type="Data_Client_ControlModel.Store.Ciudades" Multiplicity="1" />
+    <End Role="Promociones" Type="Data_Client_ControlModel.Store.Promociones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Cod_ciudad" />
+      </Principal>
+      <Dependent Role="Promociones">
+        <PropertyRef Name="Cod_ciudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Promocion__Cod_p__08EA5793">
+    <End Role="Paises" Type="Data_Client_ControlModel.Store.Paises" Multiplicity="1" />
+    <End Role="Promociones" Type="Data_Client_ControlModel.Store.Promociones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Cod_pais" />
+      </Principal>
+      <Dependent Role="Promociones">
+        <PropertyRef Name="Cod_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
