@@ -1,0 +1,43 @@
+﻿@model Client_Control_001.Models.Compras
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Compras</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cod_compra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cod_compra)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cod_cli)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cod_cli)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Empresas.Cod_empresa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Empresas.Cod_empresa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fecha_compra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fecha_compra)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

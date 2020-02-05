@@ -1,0 +1,46 @@
+﻿@model Client_Control_001.Models.Compras
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Compras</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cod_compra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cod_compra)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cod_cli)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cod_cli)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Empresas.Cod_empresa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Empresas.Cod_empresa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fecha_compra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fecha_compra)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

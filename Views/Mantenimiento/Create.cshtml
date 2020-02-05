@@ -1,0 +1,59 @@
+﻿@model Client_Control_001.Models.Compras
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Compras</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cod_compra)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cod_compra)
+            @Html.ValidationMessageFor(model => model.Cod_compra)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cod_cli)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cod_cli)
+            @Html.ValidationMessageFor(model => model.Cod_cli)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cod_empresa, "Empresas")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Cod_empresa", String.Empty)
+            @Html.ValidationMessageFor(model => model.Cod_empresa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fecha_compra)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fecha_compra)
+            @Html.ValidationMessageFor(model => model.Fecha_compra)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

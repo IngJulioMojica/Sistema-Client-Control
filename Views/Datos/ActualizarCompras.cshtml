@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Client_Control_001.Models.LaCompra>
+
+@{
+    ViewBag.Title = "ActualizarCompras";
+}
+
+<h2>ActualizarCompras</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codigocompra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombempresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechacompra)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigocompra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombempresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechacompra)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
